@@ -1,0 +1,8 @@
+{
+    "$schema": "../src/schemas/emotion-core-generic-weights-1.0.json",
+    "weights": [
+        { "parameter": "param1", "value": -0.1 },
+        { "parameter": "param2", "value": 10 },
+        { "parameter": "param3", "value": -100 }
+    ]
+}

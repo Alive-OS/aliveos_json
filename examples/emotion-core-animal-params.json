@@ -1,0 +1,9 @@
+{
+    "$schema": "../src/schemas/emotion-core-animal-params-1.0.json",
+    "adrenaline": 0,
+    "cortisol": 11,
+    "dopamine": 22.2,
+    "melatonin": 33.33,
+    "oxytocin": 444.44,
+    "serotonin": 555.555
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "../src/schemas/command-concept-1.0.json",
+    "name": "my concept",
+    "descriptor": [
+        {
+            "modifier": "",
+            "commands": [
+                {
+                    "command": "i2c_send",
+                    "i2c_send_address": "0x2a",
+                    "i2c_send_cmd": "0x32",
+                    "i2c_send_argument": "0x00"
+                },
+                {
+                    "command": "sleep",
+                    "sleep_ms": 100
+                }
+            ]
+        },
+        {
+            "modifier": "long",
+            "commands": [
+                {
+                    "command": "i2c_send",
+                    "i2c_send_address": "0x2a",
+                    "i2c_send_cmd": "0x32",
+                    "i2c_send_argument": "0x00"
+                },
+                {
+                    "command": "sleep",
+                    "sleep_ms": 1000
+                }
+            ]
+        }
+    ]
+}

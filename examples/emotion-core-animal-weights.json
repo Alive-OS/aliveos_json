@@ -1,0 +1,7 @@
+{
+    "$schema": "../src/schemas/emotion-core-animal-weights-1.0.json",
+    "weights": [
+        { "parameter": "adrenaline", "value": -0.1 },
+        { "parameter": "dopamine", "value": 2 }
+    ]
+}
