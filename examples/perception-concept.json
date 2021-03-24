@@ -1,0 +1,25 @@
+{
+    "$schema": "../src/schemas/perception-concept-1.0.json",
+    "name": "thermometer",
+    "descriptor": [
+        {
+            "concept": "temperature_cold",
+            "conditions": [
+                {"condition": "LESS_THAN_OR_EQUAL", "threshold": 10}
+            ]
+        },
+        {
+            "concept": "temperature_ok",
+            "conditions": [
+                {"condition": "GREATER_THAN", "threshold": 10},
+                {"condition": "LESS_THAN", "threshold": 30}
+            ]
+        },
+        {
+            "concept": "temperature_bloody_hell",
+            "conditions": [
+                {"condition": "GREATER_THAN", "threshold": 1000000}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Command Concept Descriptor Schema",
+    "description": "Describes the structure of the descriptor",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Sensor name",
+            "type": "string"
+        },
+        "descriptor": {
+            "description": "Description of the concept with different modifiers",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "concept": {
+                        "type": "string",
+                        "description": "Name of the perception concept",
+                        "minLength": 1,
+                        "required": true
+                    },
+                    "conditions": {
+                        "description": "Conditions on which the concept is applying. (`cold` if temperature sensor registers value < 10ºC)",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "condition": {
+                                    "type": "string",
+                                    "description": "Command code (if supported) in hex or dec",
+                                    "required": true,
+                                    "enum": [
+                                        "EQUAL",
+                                        "NOT_EQUALS",
+                                        "GREATER_THAN",
+                                        "GREATER_THAN_OR_EQUAL",
+                                        "LESS_THAN",
+                                        "LESS_THAN_OR_EQUAL"
+                                    ]
+                                },
+                                "threshold": {
+                                    "type": "number",
+                                    "description": "Value with which current sensor value will be compared",
+                                    "required": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

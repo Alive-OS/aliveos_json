@@ -1,0 +1,74 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Command Concept Descriptor Schema",
+    "description": "Describes the structure of the descriptor",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Name of the concept",
+            "type": "string"
+        },
+        "descriptor": {
+            "description": "Description of the concept with different modifiers",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "modifier": {
+                        "type": "string",
+                        "description": "Modifier of the descriptor. Can be empty, must be unique",
+                        "default": ""
+                    },
+                    "commands": {
+                        "description": "Sequence of commands to the hardware",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "command": {
+                                    "type": "string",
+                                    "description": "Command code (if supported) in hex or dec",
+                                    "required": true,
+                                    "enum": [
+                                        "i2c_send",
+                                        "sleep"
+                                    ]
+                                },
+                                "sleep_ms": {
+                                    "type": "integer",
+                                    "description": "Time to wait in milliseconds",
+                                    "required": false,
+                                    "default": 0
+                                },
+                                "i2c_send_address": {
+                                    "type": "string",
+                                    "description": "I2C device address (in hex or dec)",
+                                    "required": false,
+                                    "default": "0x00"
+                                },
+                                "i2c_send_cmd": {
+                                    "type": "string",
+                                    "description": "Command code (in hex or dec)",
+                                    "required": false,
+                                    "default": "0x00"
+                                },
+                                "i2c_send_argument": {
+                                    "type": "string",
+                                    "description": "Command argument (in hex or dec)",
+                                    "required": false,
+                                    "default": "0x00"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "name",
+        "commands"
+    ]
+}
